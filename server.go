@@ -127,7 +127,7 @@ func pushMessage(w http.ResponseWriter, r *http.Request) {
 			continue
 		}
 
-		_, err = webpush.Send(nil, sub, pushRes, "AAAAifA_Z_A:APA91bHNfPx-idvvme5W9VcXXlCKr7QNZ7CojgRXs726y4wLabV8CGc0ZACXjNZa_RDp3ubbyGxEwcuqUqYpDFETP5j1Ww-gPOTPBYISFpq0OizXnaR6y_OgjFt_bRXMHjuGUDlPXqhR")
+		_, err = webpush.Send(nil, sub, pushRes, serverConfig.Token)
 		if err != nil {
 			println(err.Error())
 		}
@@ -185,6 +185,7 @@ type Cfg struct {
 	Addr string `json:"listen_addr"`
 	CertFile string `json:"cert_file"`
 	KeyFile string `json:"cert_key_file"`
+	Token string `json:"token"`
 }
 
 type Success struct {
