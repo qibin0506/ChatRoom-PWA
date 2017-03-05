@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="/manifest.json" crossorigin="use-credentials">
+
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="bookmark" href="/favicon.ico"/>
+
+    <link rel="stylesheet" href="./mdl/material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./css/main.css">
+
+    <script type="text/javascript" src="./mdl/material.min.js"></script>
+    <title>ChatRoom</title>
+</head>
+<body>
+
+<div>
+    <div id="pop" class="pop">
+        <div id="login" class="login">
+            <div class="login-body">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input id="user-name" class="mdl-textfield__input" type="text">
+                    <label class="mdl-textfield__label" for="user-name">用户名</label>
+                </div>
+                <button id="login-confirm" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                    登录
+                </button>
+                <div id="login-loading" class="mdl-spinner mdl-js-spinner is-active"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="chat-main mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title">ChatRoom</span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation. We hide it in small screens. -->
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <a class="mdl-navigation__link" href="http://blog.csdn.net/qibin0506/" target="_blank">Blog</a>
+                    <a class="mdl-navigation__link" href="http://qibin.codercard.net" target="_blank">CoderCard</a>
+                    <a class="mdl-navigation__link" href="http://github.com/qibin0506" target="_blank">源码</a>
+                </nav>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">ChatRoom</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="http://blog.csdn.net/qibin0506/" target="_blank">Blog</a>
+                <a class="mdl-navigation__link" href="http://qibin.codercard.net" target="_blank">CoderCard</a>
+                <a class="mdl-navigation__link" href="http://github.com/qibin0506" target="_blank">源码</a>
+            </nav>
+        </div>
+        <div class="mdl-layout__content">
+            <div id="message-list-container" class="page-content">
+                <ul id="message-list" class="chat-list mdl-list">
+                </ul>
+            </div>
+        </div>
+
+        <div class="chat-input-container chat-footer">
+            <form action="#">
+                <div class="chat-input mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input id="chat-message-input" class="mdl-textfield__input" type="text">
+                    <label class="mdl-textfield__label" for="chat-message-input">消息内容</label>
+                </div>
+
+                <div class="send-button-container">
+                    <button onclick="return send()" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                        <i class="material-icons">send</i>
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="./script/main.js"></script>
+</body>
+</html>
