@@ -1,7 +1,6 @@
 package main
 
 import (
-	_ "github.com/go-sql-driver/mysql"
 	"net/http"
 	"github.com/googlechrome/push-encryption-go/webpush"
 	"html/template"
